@@ -8,7 +8,8 @@
       "name": "req",
       "methods": [
         "get"
-      ]
+      ],
+      "route": "{userId:int?}/tasks"
     },
     {
       "type": "http",

@@ -3,6 +3,7 @@ import pyodbc
 from ..Model.User import User
 from ..Model.Task import Task
 from typing import List
+import logging
 
 SERVER = os.environ.get('SERVER')
 DATABASE = os.environ.get('DATABASE')
@@ -10,17 +11,13 @@ USERNAME = os.environ.get('USER')
 PASSWORD = os.environ.get('PASSWORD')
 DRIVER = os.environ.get('DRIVER')
 
-
-
 class dbHandler():
-    def __init__(self):
-        self.conn_string = "Driver={" + DRIVER + "};Server=" + SERVER + ";Database=" + DATABASE + ";Uid=" + USERNAME + ";Pwd={" + PASSWORD + "};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
-        '''
-        'Driver=' + DRIVER + \
-            ';Server=' + SERVER + \
-            ';PORT=1433;Database=' + DATABASE + \
-            ';Uid='+USERNAME+';Pwd='+PASSWORD
-            '''
+    def getConnString(self):
+        logging.debug('Compiling database connection string')
+        self.conn_string = "Driver={};Server={};Database={};Uid={};Pwd={};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;".format(
+        DRIVER, SERVER, DATABASE, USERNAME, PASSWORD)
+        logging.debug('Connection string created')
+
 
     # [Task # 2] Query and return all user_id's from SQL DB
     def getUserIds(self) -> List[User]:
