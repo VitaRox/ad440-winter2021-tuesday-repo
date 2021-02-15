@@ -7,13 +7,13 @@ import {
 } from "react-router-dom";
 
 import HomeScreen from "./components/pages/HomeScreen";
-import UserScreen from "./components/pages/UserScreen";
-import TaskScreen from "./components/pages/TaskScreen";
+import UsersScreen from "./components/pages/UsersScreen";
+import TasksScreen from "./components/pages/TasksScreen.js";
 import NavScreen from "./components/navigation/NavScreen";
 import TaskListScreen from "./components/pages/TaskListScreen";
-import UsersListScreen from "./components/pages/UserListScreen";
-import ArtilleryListScreen from "./components/pages/ArtilleryListScreen";
-import ServerlessListScreen from "./components/pages/ServerlessListScreen";
+// import UsersListScreen from "./components/pages/UsersListScreen";
+// import ArtilleryListScreen from "./components/pages/ArtilleryListScreen";
+// import ServerlessListScreen from "./components/pages/ServerlessListScreen";
 import ArtilleryDetailScreen from "./components/pages/ArtilleryDetailScreen";
 import ServerlessDetailScreen from "./components/pages/ServerlessDetailScreen";
 
@@ -28,25 +28,25 @@ const App = () => {
             <HomeScreen />
           </Route>
           <Route path="/users" exact>
-            <UsersListScreen />
+            <UsersScreen />
           </Route>
           <Route path="/users/:userId" exact>
-            <UserScreen />
+            <UsersScreen />
           </Route>
           <Route path="/users/:userId/tasks" exact>
             <TaskListScreen />
           </Route>
           <Route path="/users/:userId/tasks/:taskId" exact>
-            <TaskScreen />
+            <TasksScreen />
           </Route>
           <Route path="/artillery" exact>
-            <ArtilleryListScreen />
+            {/* <ArtilleryListScreen /> */}
           </Route>
           <Route path="/artillery/:testId" exact>
             <ArtilleryDetailScreen />
           </Route>
           <Route path="/serverless" exact>
-            <ServerlessListScreen />
+            {/* <ServerlessListScreen /> */}
           </Route>
           <Route path="/serverless/:testId" exact>
             <ServerlessDetailScreen />

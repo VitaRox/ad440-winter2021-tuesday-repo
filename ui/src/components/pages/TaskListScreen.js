@@ -5,7 +5,7 @@ import Button from "../uiElements/Button";
 import DUMMY_TASKS from "../data/dummy-tasks.json";
 import { useAxiosClient } from "../hooks/axios-hook";
 
-import "../css/TaskListScreen.css";
+import "../css/TaskScreen.css";
 
 const TasksScreen = (props) => {
   const [tasksList, setTasksList] = useState([]);
