@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import Button from "../uiElements/Button";
-import DUMMY_USERS from "../data/dummy-users.json";
+//import DUMMY_USERS from "../data/dummy-users.json";
 import { useAxiosClient } from "../hooks/axios-hook";
 
 import "../css/UserListScreen.css";
@@ -11,7 +11,7 @@ const UserListScreen = (props) => {
   const { sendRequest } = useAxiosClient();
 
   useEffect(() => {
-    setUsersList(DUMMY_USERS); // TESTING ONLY
+    //setUsersList(DUMMY_USERS); // TESTING ONLY
     // Just need the URL put in place, uncomment this
     const fetchUsers = async () => {
       try {
@@ -26,7 +26,7 @@ const UserListScreen = (props) => {
         console.log(err);
       }
     };
-    // fetchUsers();
+     fetchUsers();
   }, [sendRequest]);
 
   return (
